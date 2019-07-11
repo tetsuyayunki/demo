@@ -1,7 +1,11 @@
 <!DOCTYPE html> 
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
                 display: flex;
@@ -9,49 +13,129 @@
                 margin: auto;
                 width: 100%;
                 height: 100%;
+                padding-top: 60px;
+                background-color:darkolivegreen;
             }
             .header {
-                background-color: gray;
+                background-color:darkslategray;
                 width: 100%;
-                height: 30px;
+                height: 60px;
             }
-            .btn {
+            .header .btn {
+                background-color: aquamarine;
+                height: 40px;
                 float: right;
-                border: 0;
-                border-radius: 30%;
-                margin: 2px 10px 0px 0px;
-                padding: 5px;
-                background-color: cornflowerblue;
+                margin: 10px 10px 0 0;
+                padding: 0%;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
-            .btn:hover {
+            /* .btn:hover {
                 background-color: darkcyan;
-            }
+            } */
             .welcome {
                 width: 100%;
-                height: 500px;
+                height: 530px;
                 background-color:darkolivegreen;
+                clear: both;
                 
             }
             .welcomefont {
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                 font-size: 50px;
-                
+                color: white;
+                align-items: center;
+            }
+            .information {
+                width: 100%;
+                height: 530px;
+            }
+            .photo {
+                width: 20%;
+                border-radius: 50%;
+                position: relative;
+                top: 30%;
+                left: 10%;
+                display: inline;
+            }
+            .information-text {
+                width: 50%;
+                height: 50%;
+                position: absolute;
+                left: 35%;
+                top: 130%;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 30px;
+                color: white;
+            }
+            .more {
+                width: 100%;
+                height: 100px;
+                background: black;
+            }
+            .imggroups {
+                position: relative;
+                left: 40%;
+            }
+            .icon {
+                width: 50px;
+                margin: 30px;
             }
         </style>
     </head>
     <body>
-        <div class="header">
-            <button class="btn btn1">WELCOME</button>
-            <button class="btn btn2">INFO</button>
-            <button class="btn btn3">LIKE</button>
-            <button class="btn btn4">MORE</button>
+        <div class="header navbar-fixed-top">
+            <button class="btn btn-default nabar-btn" id="btn3">MORE</button>
+            <!-- <button class="btn btn-default nabar-btn">LIKE</button> -->
+            <button class="btn btn-default nabar-btn" id="btn2">INFO</button>
+            <button class="btn btn-default nabar-btn" id="btn1">WELCOME</button>
         </div>
         <div class="welcome">
-            <p class="welcomefont">WELCOME TO TETSUYA`S BLOG</p>
+            <div style="top: 30%; position: relative;color: white;">
+                <h1 class="welcomefont text-center ">Hello!</h1>
+                <p class="text-center">Hello!<br/>This is a personal web of me,<br/>if you want to know more about me,<br/>just keep scrolling!</p>
+            </div>
         </div>
-            
+        <div class="information">
+            <img src="photo.jpg" class="photo">
+            <div class="information-text">
+                <p>Name: WF</p>
+                <p>Age</p>
+                <p>balabala</p>
+            </div>
+        </div> 
+        <div class="more">
+            <div class="imggroups">
+                <a href="#"><img src="twi.svg" class="icon" style="margin-left: 0px;"></a>
+                <a href="#"><img src="twi.svg" class="icon"></a>
+                <a href="#"><img src="twi.svg" class="icon"></a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script>
+            var h = document.documentElement.scrollTop;
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+            function scrollAct() {
+                btn1.style.backgroundColor = "aquamarine";
+                btn2.style.backgroundColor = "aquamarine";
+                btn3.style.backgroundColor = "aquamarine";
+                if(h < 300) {
+                    btn1.style.backgroundColor = "gray";
+                }
 
+                else if(h < 600) {
+                    btn2.style.backgroundColor = "gray";
+                }
+
+                else {
+                    btn3.style.backgroundColor = "gray";
+                }
+            }
+            scrollAct();
+            window.onscroll = scrollAct();//监听不了？？
+        </script>
 
     </body>
 <html>    
