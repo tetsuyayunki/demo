@@ -332,7 +332,9 @@ html .clear-completed:active {
 .info a:hover {
 	text-decoration: underline;
 }
-
+s {
+	opacity: 0.2;
+}
 
 
 /* 
