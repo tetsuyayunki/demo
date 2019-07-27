@@ -335,7 +335,9 @@ html .clear-completed:active {
 s {
 	opacity: 0.2;
 }
-
+.addObj {
+	height: 100px;
+}
 
 /* 
 body {
