@@ -54,6 +54,7 @@ $(function () {
         saveData(todolist);
         load();
     });
+    //双击修改
     $("#todo-list").on("dblclick", "label", function (event) {
         //获取到todo的值
         //  console.log(todolist[$(".view label").index(this)].todo);
@@ -66,11 +67,13 @@ $(function () {
         $(this).append(newObj);
         newObj.focus();
         var that = this;
-//这里的问题
+
         newObj.onblur = function (e) {
             if($(this).val() !== oldHtml) {
-                console.log($(this).val())
-                //todolist[$(".view label").index(that)].attr("todo", this.value);
+                //console.log($(this).val())
+                //console.log(that)
+                //console.log(todolist[$(".view label").index(that)].todo)
+                todolist[$(".view label").index(that)].todo = $(this).val();
             }
             saveData(todolist);
             load();
